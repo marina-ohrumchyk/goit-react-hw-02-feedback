@@ -1,4 +1,7 @@
-export const App = () => {
+import React from 'react';
+import Feedback from 'components/Feedback';
+
+export default function App() {
   return (
     <div
       style={{
@@ -10,7 +13,8 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+      <Feedback/>
     </div>
   );
 };
+
