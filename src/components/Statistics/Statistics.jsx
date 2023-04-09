@@ -3,7 +3,6 @@ import css from 'components/Statistics/Statistics.module.css';
 
 const Statistics = ({ upGood, upNeutral, upBad, upTotal, upInterest }) => (
   <div className={css.statistica}>
-    <p className={css.title}>Statictic</p>
     <ul>
       <li className={css.item}>
         Good <span>{upGood}</span>

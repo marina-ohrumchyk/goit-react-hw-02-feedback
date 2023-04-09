@@ -30,7 +30,7 @@ class Feedback extends React.Component {
   };
 
   render() {
-    const { good, neutral, bad, total } = this.state;
+    const { good, neutral, bad, total, visible } = this.state;
     return (
       <div className={css.container}>
         <FeedbackMarkup
@@ -38,14 +38,18 @@ class Feedback extends React.Component {
           clickNeutral={() => this.handleClick('neutral')}
           clickBad={() => this.handleClick('bad')}
         />
-
-        <Statistics
-          upGood={good}
-          upNeutral={neutral}
-          upBad={bad}
-          upTotal={total}
-          upInterest={this.getPositivePercentage()}
-        />
+        <h2 className={css.title}>Statictic</h2>
+        {visible ? (
+          <Statistics
+            upGood={good}
+            upNeutral={neutral}
+            upBad={bad}
+            upTotal={total}
+            upInterest={this.getPositivePercentage()}
+          />
+        ) : (
+          `No feedback given`
+        )}
       </div>
     );
   }
